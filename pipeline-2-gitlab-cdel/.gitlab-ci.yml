@@ -1,0 +1,17 @@
+stages:
+  - test
+  - build
+  - deploy
+
+test_job:
+  stage: test
+  script: npm test
+
+build_job:
+  stage: build
+  script: npm run build
+
+deploy_job:
+  stage: deploy
+  script: echo "Run 'Deploy to prod' manually in GitLab UI"
+  when: manual
